@@ -1,0 +1,289 @@
+legend {
+    font-size: x-large;
+}
+
+body {
+    background-color: #ff840020;
+    color: #0032A0;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+textarea {
+    background-color: #ff840034;
+    font-family: "Century Gothic", AppleGothic, sans-serif;
+    color: #0032A0;
+}
+
+.V :hover {
+    /*.V */
+    background-color: #FF8300;
+    color: #0032A0;
+    border: 4px double #0032A0;
+}
+
+input[class="nchv"] {
+    float: right;
+    background-color: #ff840028;
+    color: #0032A0;
+    width: 80px;
+}
+
+input[class="nchv"]:hover {
+    background-color: #FF8300;
+    color: #0032A0;
+    border: 14px double #0032A0;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+#butA,
+#butB,
+.fautes {
+    background-color: #ff840028;
+    color: #0032A0;
+}
+
+p {
+    color: #0032A0;
+}
+
+
+/*Lhamarre tente un truc*/
+
+p[class="droite"] {
+    text-align: right;
+}
+
+fieldset {
+    color: #0032A0;
+    border: 4px double #FF8300;
+    display: flex;
+    flex-direction: column;
+}
+
+.golaz {
+    flex-grow: 30000;
+    justify-content: center;
+    display: flex;
+    margin: 5px;
+}
+
+.V {
+    display: flex;
+    justify-content: center;
+}
+
+.com {
+    display: flex;
+    justify-content: left;
+}
+
+input[id="bouton3"] {
+    background-color: #FF8300;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 14px;
+    padding: 12px;
+    width: 100px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    /*police sur les boutons*/
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 50%;
+}
+
+input[id="bouton3"] {
+    background-color: #FF8300;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 14px;
+    padding: 12px;
+    width: 100px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    /*police sur les boutons*/
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 50%;
+}
+
+textarea {
+    background-color: #ff840034;
+    font-family: "Century Gothic", AppleGothic, sans-serif;
+    color: #0032A0;
+}
+
+.V :root {
+    --form-control-color: #FF8300;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+form {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+.essai {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    margin-top: 1em;
+}
+
+.essai :focus-within {
+    color: var(--form-control-color);
+}
+
+#bouton- {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: red;
+    /* Not removed via appearance */
+    margin: 0;
+    font: inherit;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    grid-row: center;
+}
+
+input[type='radio'] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: #0032A0;
+    /* Not removed via appearance */
+    margin: 0;
+    font: inherit;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    grid-row: center;
+}
+
+input[type='radio']:focus {
+    outline: max(3px, 0.3em) solid #FF8300;
+    outline-offset: max(2px, 0.15em);
+}
+
+
+/* #bouton1B:focus {
+        outline: max(3px, 0.3em) solid #FF8300;
+        outline-offset: max(2px, 0.15em);
+    } */
+
+#bouton-:focus {
+    outline: max(3px, 0.3em) solid #0032A0;
+    outline-offset: max(2px, 0.15em);
+}
+
+#fin-submit,
+#set-submit,
+#submit {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #FF8300;
+    border-radius: 10px;
+    border: 4px double;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 14px;
+    width: 100px;
+    cursor: pointer;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+#submit:hover,
+#fin-submit:hover,
+#set-submit:hover {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #FF8300;
+    border-radius: 10px;
+    border: 4px double #0032A0;
+    color: #0032A0;
+    text-align: center;
+    font-size: 14px;
+    width: 100px;
+    cursor: pointer;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    transition: all 1.5s ease-Out;
+}
+
+
+/*
+    #bouton1 a {
+        position: relative;
+        transition: all .45s ease-Out;
+    }
+    
+    #circle {
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+        line-height: 40px;
+        border-radius: 50%;
+        background: #BFC0C0;
+        position: absolute;
+        transition: all .5s ease-Out;
+        top: 20px;
+        left: 70px;
+    }
+    
+    #bouton1:hover #circle {
+        width: 200%;
+        height: 500%;
+        opacity: 1;
+        top: -70px;
+        left: -70px;
+    }
+    
+    #bouton1:hover a {
+        color: #2D3142;
+    }*/
+
+.oui {
+    background-color: #ff840028;
+    color: #0032A0;
+}

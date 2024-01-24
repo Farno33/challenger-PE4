@@ -1,0 +1,91 @@
+<?php
+
+/* *********************************************************/
+/* Challenger V3 : Gestion de l'organisation du Challenge **/
+/* Créé par Raphaël Kichot' MOULIN *************************/
+/* raphael.moulin@ecl13.ec-lyon.fr *************************/
+/* *********************************************************/
+/* includes/_constantes.php ********************************/
+/* Toutes les constantes du site ***************************/
+/* *********************************************************/
+/* Dernière modification : le 02/06/22 *********************/
+/* *********************************************************/
+
+
+//Constantes base de données
+//Constantes pour les essais en local
+if (!defined('LOCAL'))
+	define('LOCAL',			$_SERVER['SERVER_NAME'] == 'localhost');
+
+
+if (LOCAL && !file_exists('/customEntryPoint.sh')) {
+    define('DB_HOST',         'localhost');
+    define('DB_NAME',         'nom_database');
+    define('DB_USER',         'user_pouvant_acceder_a_cette_database_et_pouvant_effectuer_toutes_les_operations_dessus');
+    define('DB_PASS',         'password_user');
+}
+
+//On est sur le serveur de production ou docker (débrouillez-vous pour les environements inhabituels, voici les configs pour le docker-compose)
+else {
+	define('DB_HOST', 		'db');
+	define('DB_NAME',		'challenger');
+	define('DB_USER', 		'local');
+	define('DB_PASS', 		'');
+}
+
+//Configuration pour le CAS (déprecier, faut revoir avec la DSI...)
+define('CONFIG_CAS_HOST', 		'cas.ec-lyon.fr');
+define('CONFIG_CAS_PORT',		443);
+define('CONFIG_CAS_CONTEXT',	 	'');
+
+//Configuration pour le SSO OpenIdConnect de MyECL
+define('CONFIG_OIDC_HOST', 		'https://hyperion.myecl.fr');
+define('CONFIG_OIDC_CLIENTID',	 	'Challenger');
+define('CONFIG_OIDC_SECRET',	 	'<Client_Secret_Token>');
+
+//Debug
+define('DEBUG_ACTIVE_LOCAL',		true);
+define('DEBUG_ACTIVE_ONLINE',		false);
+define('DEBUG_ACTIVE',			!LOCAL && DEBUG_ACTIVE_ONLINE || LOCAL && DEBUG_ACTIVE_LOCAL);
+
+
+//Configuration pour l'envoi d'emails TODO: comprendre et remettre ce service en place
+define('EMAIL_ACTIVE',			true);
+define('EMAIL_SMTP', 			'mail.gandi.net');
+define('EMAIL_IMAP', 			'mail.gandi.net');
+define('EMAIL_PORT',			587);
+define('EMAIL_PORT_IMAP',		993);
+define('EMAIL_SECURE',			'tls');
+define('EMAIL_AUTH',			true);
+define('EMAIL_FAILS',			1);
+define('EMAIL_USER',			'');
+define('EMAIL_PASS',			'');
+define('EMAIL_MAIL',			'');
+define('EMAIL_NAME',			'Challenge - Ecole Centrale Lyon');
+define('EMAIL_FORCED', 			false); 
+
+
+//Configuration pour l'envoi de sms (On ne vas probablement pas reconduire ça, trop cher par rapport à ce que ça apporte/les notifications push)
+define('SMS_ACTIVE',			false);
+define('SMS_FORCED', 			false); 
+define('SMS_PHONE', 			'');
+define('SMS_URL', 			'');
+define('SMS_FAILS', 			1);
+define('SMS_SALT', 			'');
+define('SMS_SALT_RECEIVE', 		'');
+
+
+//Configuration d'application
+define('BASE_URL',			'https://challenger.challenge-centrale-lyon.fr');
+define('BASE_URL_APP',		'https://api.challenge-centrale-lyon.fr');
+define('URL_API_ECLAIR', 	'https://api.eclair.ec-lyon.fr');	// Savoir perdu sur ces deux ressources
+define('URL_SYGMA',			'http://sygma.eclair.ec-lyon.fr');
+define('SYGMA_SALT',			'');
+define('SITE_ENABLED_LOCAL',		true);
+define('SITE_ENABLED_ONLINE',		true);
+define('SITE_ENABLED',			!LOCAL && SITE_ENABLED_ONLINE || LOCAL && SITE_ENABLED_LOCAL);
+define('APP_SEED',			'');
+define('APP_PKEY_COOKIE',	'file:///etc/apache2/pkey.pem');
+
+//Pour les constantes d'app précises, voir _challenger.php
+//Elles sont sauvergardés dans la base de donnée 

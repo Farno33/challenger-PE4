@@ -1,0 +1,743 @@
+@import "themes.css";
+
+@font-face {
+    font-family: "Agency FB";
+    src: url(../fonts/Agency_FB.ttf);
+}
+
+@font-face {
+    font-family: "Century Gothic";
+    src: url(../fonts/Century_Gothic.ttf);
+}
+
+* {
+    padding:0px;
+    margin:0px;
+    box-sizing:border-box;
+    font-family: "Century Gothic", Calibri, Arial, sans-serif;
+    font-size:14px;
+}
+
+html, body {
+    height:100%;
+    overflow:hidden;
+}
+
+body {
+    overflow:hidden;
+    position:relative;
+    padding-top:80px;
+}
+
+noscript {
+    background: var(--background);
+    overflow: auto;
+    width: 100%;
+    height: calc(100% - 80px);
+    max-width: 100%;
+    max-height: 100%;
+    position:absolute;
+    z-index:100001;
+    text-align: center;
+    font-weight: bold;
+    padding-top:2em;
+}
+
+div.over {
+    background: var(--background);
+    overflow: auto;
+    width: 100%;
+    height: calc(100% - 80px);
+    max-width: 100%;
+    max-height: 100%;
+    position:absolute;
+    z-index:100000;
+    text-align: center;
+}
+
+a#header {
+    display:block;
+    font-size:55px;
+    font-family: "Agency FB", Arial, sans-serif;
+    background:#FF9800;
+    padding:0px 10px;
+    margin:0px;
+    text-shadow:0px 0px 10px #FFF;
+    height:80px;
+    text-align: center;
+    text-decoration: none;
+    font-weight:bold;
+    color:#000;
+    z-index:100000;
+    position:absolute;
+    top:0px;
+    width:100%;
+}
+
+a#header span {
+    font-size:16px ;
+    color:#FFF;
+    font-family: "Century Gothic", Calibri, Arial, sans-serif;
+}
+
+div.over input[type=file] {
+    position:absolute;
+    top:-100px;
+}
+
+div.actions {
+    background:#222;
+    padding:15px 5px;
+    text-align:center;
+}
+
+div.over div.choose,
+div.over div.help,
+div.over div.scratch {
+    display:inline-block;
+    margin:5px;
+    width:calc(33% - 15px);
+    border-radius:10px;
+    cursor:pointer;
+    height:140px;
+    vertical-align: middle;
+    transition:0.2s;
+    padding:10px;
+    overflow: hidden;
+}
+
+div.over div.choose span,
+div.over div.help span,
+div.over div.scratch span {
+    font-size:1.5em;
+    color:#777;
+    transition:0.2s;
+}
+
+div.over div.choose span.glyphicon,
+div.over div.help span.glyphicon,
+div.over div.scratch span.glyphicon {
+    display:block;
+    font-size:3em;
+    margin-bottom:20px;
+}
+
+div.over div.choose:hover,
+div.over div.help:hover,
+div.over div.scratch:hover {
+    background:#FFF;
+    transition:background 0.2s;
+}
+
+div.over div.choose:hover span,
+div.over div.help:hover span,
+div.over div.scratch:hover span {
+    color:#000;
+    transition:0.2s;
+} 
+
+div.over div.help.help-animated {
+
+}
+
+div.over div.help.help-animated,
+div.over div.help.help-animated span {
+    -webkit-animation:rainbow 1s infinite;
+    -ms-animation:rainbow 1s infinite;
+    -o-animation:rainbow 1s infinite;
+    animation:rainbow 1s infinite;
+}
+
+div.over div.help.help-animated:hover,
+div.over div.help.help-animated:hover span {
+    -webkit-animation:none;
+    -ms-animation:none;
+    -o-animation:none;
+    animation:none;
+}
+
+@-webkit-keyframes rainbow {
+    0% {color: #ff0000;}
+    10% {color: #ff8000;}
+    20% {color: #ffff00;}
+    30% {color: #80ff00;}
+    40% {color: #00ff00;}
+    50% {color: #00ff80;}
+    60% {color: #00ffff;}
+    70% {color: #0080ff;}
+    80% {color: #0000ff;}
+    90% {color: #8000ff;}
+    100% {color: #ff0080;}
+}
+
+@-ms-keyframes rainbow {
+    0% {color: #ff0000;}
+    10% {color: #ff8000;}
+    20% {color: #ffff00;}
+    30% {color: #80ff00;}
+    40% {color: #00ff00;}
+    50% {color: #00ff80;}
+    60% {color: #00ffff;}
+    70% {color: #0080ff;}
+    80% {color: #0000ff;}
+    90% {color: #8000ff;}
+    100% {color: #ff0080;}
+}
+
+@-o-keyframes rainbow {
+    0% {color: #ff0000;}
+    10% {color: #ff8000;}
+    20% {color: #ffff00;}
+    30% {color: #80ff00;}
+    40% {color: #00ff00;}
+    50% {color: #00ff80;}
+    60% {color: #00ffff;}
+    70% {color: #0080ff;}
+    80% {color: #0000ff;}
+    90% {color: #8000ff;}
+    100% {color: #ff0080;}
+}
+
+@keyframes rainbow {
+    0% {color: #ff0000;}
+    10% {color: #ff8000;}
+    20% {color: #ffff00;}
+    30% {color: #80ff00;}
+    40% {color: #00ff00;}
+    50% {color: #00ff80;}
+    60% {color: #00ffff;}
+    70% {color: #0080ff;}
+    80% {color: #0000ff;}
+    90% {color: #8000ff;}
+    100% {color: #ff0080;}
+}
+
+
+div.over h2 {
+    color:#535F9D;
+    font-size:2.5em;
+    font-family: "Agency FB", Arial, sans-serif;
+    margin:30px 0px;
+} 
+
+div.over table {
+    color:#555;
+    border-collapse: collapse;
+    border-spacing:0px;
+}
+
+div.over table tbody tr:nth-of-type(2n+1) {
+    background:#F0F0F0;
+}
+
+div.over table tr td,
+div.over table tr th {
+    text-align:center;
+    padding:5px 10px;
+    border-left:1px solid #DDD;
+}
+
+div.over table tr th {
+    border-bottom:2px solid #FF9800;
+    font-weight:bold;
+}
+
+div.over table tr td:first-child,
+div.over table tr th:first-child {
+    border-left:none;
+}
+
+div.over section {
+    width:45%;
+    display:inline-block;
+    text-align:right;
+    margin-bottom:40px;
+    vertical-align: top;
+}
+
+div.over section table {
+    margin-left:40px;
+    margin-bottom:20px;
+}
+
+div.over section:first-of-type table {
+    margin-left:auto;
+    margin-right:40px;
+}
+
+div.over section table td span.full {
+    color:red;
+    font-weight: bold;
+    font-size:1em;
+}
+
+
+@media screen and (max-width: 800px) {
+    div.over section {
+        width:100%;
+    }
+
+    div.over section table,
+    div.over section:first-of-type table {
+        margin:auto;
+    }
+}
+
+div#hints {
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    right:auto;
+    width:500px;
+    padding:0px 10px;
+    z-index:10000000;
+}
+
+div#hints.hints-new {
+    right:0px;
+    height:100%;
+    width:100%;
+    padding:200px calc(50% - 250px) 0px;
+    background:rgba(255, 255, 255, 0.9);
+    transition:background 0.5s;
+}
+
+div#hints.hints-right {
+    left:auto;
+    right:0px;
+}
+
+div#hints div.hint {
+    width:100%;
+    background-color:#222;
+    color:#EEE;
+    border:1px solid #999;
+    margin:10px 0px;
+    padding:6px 30px 6px 10px;
+    display:none;
+    position:relative;
+    font-size:16px;
+    box-shadow: 0px 0px 30px #FFF;
+    text-shadow:0px 0px 2px #000;
+    background-image:url(../images/actions/right-arrow.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+div#hints div.hint ul {
+    margin-left:20px;
+    margin-bottom: 0px;
+}
+
+div#hints div.hint.hint-danger,
+div#hints div.hint.hint-error {
+    background-color:#922A1A;
+}
+
+div#hints div.hint.hint-warning,
+div#hints div.hint.hint-attention {
+    background-color:#F57F17;
+}
+
+div#hints div.hint.hint-info,
+div#hints div.hint.hint-global {
+    background-color:#1C2A63;
+}
+
+div#hints div.hint.hint-global ul li b {
+    cursor:pointer;
+}
+
+div#hints div.hint.hint-success {
+    background-color:#136C2E;
+}
+
+div#hints div.hint.hint-message {
+    background-color:#FFF;
+    color:#000;
+    box-shadow:0px 0px 10px #666;
+    text-shadow:none;
+    background-image:url(../images/actions/right-arrow-black.png);
+}
+
+div#hints div.hint.hint-message a {
+    color:#000;
+    text-shadow:none;
+}
+
+div#hints div.hint span.glyphicon  {
+    position:absolute;
+    top:10px;
+    right:10px;
+    color:#DDD;
+    visibility:hidden;
+}
+
+div#hints div.hint.hint-message span.glyphicon {
+    color:#666;
+}
+
+div#hints div.hint:hover span.glyphicon {
+    visibility:visible;
+}
+
+div#hints div.hint:hover span.glyphicon:hover {
+    color:#FFF !important;
+    cursor:pointer;
+}
+
+div#hints div.hint.hint-message:hover span.glyphicon:hover {
+    color:#000 !important;
+}
+
+div#hints div.hint a  {
+    color:#FFF;
+    font-weight:900;
+    text-decoration: underline;
+    text-shadow:0px 0px 5px #000;
+}
+
+div#hints div.hint a:hover  {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 650px) {
+    div#hints {
+        width:100%;
+    }
+
+    div#hints.hints-new {
+        padding:90px 10px 0px;
+    }
+
+    div.over div.choose,
+    div.over div.help,
+    div.over div.scratch {
+        display:block;
+        width:95%;
+        margin:5px auto;
+        height:80px;
+        margin-top:15px;
+    }
+
+    div.over div.help {
+        margin-top: 0px;
+    }
+
+    div.over div.choose span.glyphicon,
+    div.over div.help span.glyphicon,
+    div.over div.scratch span.glyphicon {
+        float:left;
+        position:relative;
+        top:10px;
+    }
+}
+
+div#hints.hints-right {
+    left:calc(100% - 40px);
+    right:auto;
+}
+
+div#hints.hints-right div.hint {
+    padding:6px 0px 6px 40px;
+    background-image:url(../images/actions/left-arrow.png);
+    background-position: left center;
+    cursor:pointer;
+}
+
+div#hints.hints-right div.hint span.glyphicon  {
+    /*top:10px;
+    left:10px;*/
+    display: none;
+}
+
+div#hints.hints-right div.hint.hint-message {
+    background-image:url(../images/actions/left-arrow-black.png);
+}
+
+
+table#table-excel {
+    border-collapse: collapse;
+    background:#DDD;
+    border-spacing: 0px;
+    table-layout:fixed;
+    display:block;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border-top:1px solid #999;
+}
+
+table#table-excel tr td,
+table#table-excel tr th {
+    line-height: 28px;
+    padding:0px;
+    vertical-align: middle;
+    border:1px solid #999;
+    width:100px;
+    min-width: 100px;
+}
+
+table#table-excel tr th,
+table#table-excel tr th div {
+    font-weight:bold;
+    text-align: center;
+    background:#EEE;
+    color:#666;
+    height:28px;
+    position:relative;
+    background-clip: padding-box;
+    z-index:10;
+    box-shadow: 1px 1px 1px #999;
+    border-color:#EEE;
+    cursor:pointer;
+}
+
+table#table-excel tr th div {
+    overflow:hidden;
+}
+
+table#table-excel tr th div span.glyphicon {
+    vertical-align: middle;
+    float:right;
+    visibility:hidden;
+    position:absolute;
+    top:6px;
+    right:3px;
+}
+
+table#table-excel tr th:hover div span.glyphicon {
+    visibility:visible;
+    color:#AAA;
+}
+
+table#table-excel tr th div span.glyphicon:hover {
+    color:#900;
+    cursor:pointer;
+}
+
+table#table-excel thead tr:first-of-type th:first-of-type div {
+   text-align: center;
+}
+
+table#table-excel thead tr:first-of-type th:first-of-type div span.glyphicon {
+    visibility: visible;
+    float:none;
+    position:inherit;
+    top:-2px;
+    left:2px;
+}
+
+table#table-excel thead tr th:first-of-type:hover div span.glyphicon {
+    color:#090;
+}
+
+table#table-excel thead tr th.linked,
+table#table-excel thead tr th.linked div {
+    background:#444;
+    color:#DDD;
+}
+
+table#table-excel tr th:first-of-type {
+    width:50px;
+    min-width: 50px;
+}
+
+table#table-excel thead tr:first-of-type th,
+table#table-excel thead tr:first-of-type th div {
+    border-top:none;
+    z-index:100;
+}
+
+table#table-excel thead tr:first-of-type th:first-of-type,
+table#table-excel thead tr:first-of-type th:first-of-type div {
+    background:#DDD;
+    border:none;
+}
+
+table#table-excel tr td input {
+    border:0px;
+    -webkit-appearance: none;
+    padding:2px 4px;
+    line-height: 28px;
+    height:28px;
+    width:100%;
+    background:white;
+    font-family: "Century Gothic", Calibri, Arial, sans-serif;
+    font-size:13px;
+}
+
+
+table#table-excel tr.row-warning th,
+table#table-excel tr.row-warning th div {
+    background:#EED3BB; 
+}
+
+
+table#table-excel tr.row-warning-shown td input {
+    background:#FFF4EE;
+}
+
+
+table#table-excel tr.row-warning.row-warning-shown th,
+table#table-excel tr.row-warning.row-warning-shown th div {
+    background:#A86;
+    color:#331700;
+}
+
+table#table-excel tr.row-danger th,
+table#table-excel tr.row-danger th div {
+    background:#EBB;
+}
+
+
+table#table-excel tr.row-danger-shown td input {
+    background:#FEE;
+}
+
+
+table#table-excel tr.row-danger.row-danger-shown th,
+table#table-excel tr.row-danger.row-danger-shown th div {
+    background:#A66;
+    color:#300;
+}
+
+table#table-excel tr td input.cell-error,
+table#table-excel tr td input.cell-warning {
+    font-weight:bold;
+}
+
+table#table-excel tr td input.cell-error {
+    background: repeating-linear-gradient(
+      45deg,
+      #fee,
+      #fee 10px,
+      #fdd 10px,
+      #fdd 20px
+    );
+    color:red;
+}
+
+table#table-excel tr td input.cell-warning {
+    background: repeating-linear-gradient(
+      45deg,
+      #fff4ee,
+      #fff4ee 10px,
+      #ffeedd 10px,
+      #ffeedd 20px
+    );
+    color:orange;
+}
+
+table#table-excel tr td input[readonly] {
+    background: #DDD;
+    color:black;
+    font-weight:bold;
+}
+
+
+table#table-excel tr td input[readonly].cell-sexe-h,
+table#table-excel tr td input[readonly].cell-sexe-f,
+table#table-excel tr td input[readonly].cell-sportif-0,
+table#table-excel tr td input[readonly].cell-sportif-1,
+table#table-excel tr td input[readonly].cell-fanfaron,
+table#table-excel tr td input[readonly].cell-pompom,
+table#table-excel tr td input[readonly].cell-cameraman,
+table#table-excel tr td input[readonly].cell-fullpackage,
+table#table-excel tr td input[readonly].cell-lightpackage,
+table#table-excel tr td input[readonly].cell-capitaine {
+    text-align:center;
+    color:white;
+}
+
+table#table-excel tr td input[readonly].cell-sexe-h {
+    background:#266070; /* CYAN */
+}
+
+table#table-excel tr td input[readonly].cell-sexe-f {
+    background:#652978; /* MAGENTA */
+}
+
+table#table-excel tr td input[readonly].cell-sportif-1 {
+    background:#2A8646; /* GREEN */
+}
+
+table#table-excel tr td input[readonly].cell-sportif-0 {
+    background:#B54A39; /* RED */
+}
+
+table#table-excel tr td input[readonly].cell-capitaine {
+    background:#78A634; /* YELLOW (à revoir) */
+}
+
+table#table-excel tr td input[readonly].cell-fanfaron {
+    background:#cc773a; /* ORANGE */
+}
+
+table#table-excel tr td input[readonly].cell-pompom {
+    background:#48307C; /* PURPLE */
+}
+
+table#table-excel tr td input[readonly].cell-cameraman {
+    background:#78A634; /* LIME */
+}
+
+table#table-excel tr td input[readonly].cell-fullpackage {
+    background:#313f7b; /* BLUE */
+}
+
+table#table-excel tr td input[readonly].cell-lightpackage {
+    background:#98305F; /* PINK */
+}
+
+
+table#table-excel tr.row-waiting th,
+table#table-excel tr.row-waiting th div,
+table#table-excel tr.row-sent-error th,
+table#table-excel tr.row-sent-error th div,
+table#table-excel tr.row-sent-success th,
+table#table-excel tr.row-sent-success th div {
+    color:#FFF;
+}
+
+table#table-excel tr.row-waiting td input[readonly],
+table#table-excel tr.row-sent-error td input[readonly],
+table#table-excel tr.row-sent-success td input[readonly] {
+    color:#000;
+}
+
+table#table-excel tr.row-waiting td input[readonly] {
+    background:#EEF;
+}
+
+table#table-excel tr.row-waiting th,
+table#table-excel tr.row-waiting th div {
+    background:blue;
+}
+
+table#table-excel tr.row-sent-error td input[readonly] {
+    background:#FEE;
+}
+
+table#table-excel tr.row-sent-error th,
+table#table-excel tr.row-sent-error th div {
+    background:red;
+}
+
+table#table-excel tr.row-sent-success td input[readonly] {
+    background:#EFE;
+}
+
+table#table-excel tr.row-sent-success th,
+table#table-excel tr.row-sent-success th div {
+    background:green;
+}
+
+
+table#table-excel tr td input.cell-force {
+    background:#fff4ee !important;
+    color:orange !important;
+    font-weight: bold !important;
+}

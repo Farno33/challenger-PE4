@@ -1,0 +1,23 @@
+.htaccess
+.hterrlog
+includes/_constantes.php
+sessions
+backups
+update
+
+# Ftp Quota
+.ftpquota
+
+# Eclipse Project settings
+*.*project
+.settings
+
+# PyCharm files
+.idea
+
+# Visual Studio Code files
+.vscode
+
+# OSX dir files
+.DS_Store
+**/.DS_Store

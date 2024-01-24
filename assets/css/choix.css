@@ -1,0 +1,45 @@
+p {
+    color: #0032A0;
+}
+
+body {
+    background-color: #ff840028;
+    color: #0032A0;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+#valid {
+    background-color: #FF8300;
+    border-radius: 10px;
+    border: 4px double #FF8300;
+    color: #0032A0;
+    text-align: center;
+    font-size: 14px;
+    width: 300px;
+    cursor: pointer;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    /*police sur les boutons*/
+}
+
+.uwu {
+    display: flex;
+    justify-content: center;
+}
+
+#valid:hover {
+    background-color: #FF8300;
+    border-radius: 10px;
+    border: 4px double #0032A0;
+    color: #0032A0;
+    text-align: center;
+    font-size: 14px;
+    width: 300px;
+    cursor: pointer;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    /*police sur les boutons*/
+}
+
+.oui {
+    background-color: #ff840028;
+    color: #0032A0;
+}

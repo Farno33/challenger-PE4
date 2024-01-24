@@ -1,0 +1,39 @@
+Liste des participants 
+T|p:participants:|e:ecoles:p|te:tarifs_ecoles:p|t:tarifs:te
+F|p.nom|p.prenom|p.sexe|e.nom|p.sportif|p.fanfaron|p.pompom|p.cameraman|p.telephone|p.recharge|t.nom|t.logement
+
+Listes des participants par écoles
+T|p:participants:|te:tarifs_ecoles:p|t:tarifs:te
+G|ecoles:p
+F|p.nom|p.prenom|p.sexe|p.sportif|p.fanfaron|p.pompom|p.cameraman|p.telephone|p.recharge|t.nom|t.logement
+
+
+Doublons en noms/prénoms
+T|p1:participants:|e1:ecoles:|p2:participants:#|e2:ecoles:p2
+F|p1.id|p1.prenom|p1.nom|e1.nom|p2.id|p2.prenom|p2.nom|e2.nom
+C|p1.id:<:p2.id|p1.prenom:like:p2.prenom|p1.nom:like:p2.nom
+
+
+Sportifs sans sports
+T|p:participants:
+TL|sp:sportifs:
+C|p.sportif:1|sp.id:null
+
+
+Multi-sportifs par école (cardinalité non nulle)
+T|p:participants:|sp1:sportifs:|sp2:sportifs:|eq1:equipes:sp1|eq2:equipes:sp2
+T|es1:ecoles_sports:eq1|es2:ecoles_sports:eq2|s1:sports:es1|s2:sports:es2
+S|p.id
+G1|ecoles
+O|s2
+C|sp1.id:<>:sp2.id
+
+Methode bien moins lourde mais plus 5x plus lente
+T|p:participants:|sp:sportifs:|eq:equipes:sp|es:ecoles_sports:|s:sports:
+S2|p.id
+G1|ecoles
+
+
+Les participants en light package logés dans une chambre
+T_|participants|chambres_participants|chambres|tarifs_ecoles|tarifs
+C|chambres.id:notnull|tarifs.logement:0

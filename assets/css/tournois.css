@@ -1,0 +1,233 @@
+@import "themes.css";
+
+* {
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+}
+
+html, body {
+	width:100%; 
+	height:100%;
+}
+
+table { 
+	border-collapse: collapse; 
+}
+
+table.bracket { 
+	background: var(--grey2);
+	border:20px solid var(--grey2);
+}
+
+table.bracket tr, 
+table.bracket td { 
+		height: 100%;
+}
+
+/* Hack IE */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
+	table.bracket tr, 
+	table.bracket td { 
+		height: 1px;
+	}
+}
+
+td.match table {
+	width:100%;
+}
+
+td.match {
+	padding-left:10px;
+	padding:0px;
+	min-width:160px;
+
+}
+
+td.match-team,
+td.match-infos,
+td.match-medal,
+td.match-set {
+	background: var(--soft-yellow);
+	padding:3px;
+	text-align: center;
+	color: var(--greyA);
+}
+
+td.match-team {
+	max-width:120px;
+	overflow:hidden;
+}
+
+td.match-set {
+	border-left:1px solid var(--grey4);
+	width:15px;
+} 
+
+td.match-infos {
+	border-left:1px solid var(--grey4);
+	font-style: italic;
+	min-width:80px;
+} 
+
+td.team-win,
+td.set-win {
+	font-weight:bold;
+	color: var(--foreground);
+}
+
+td.team-empty,
+td.set-empty {
+	font-style:italic;
+	color: var(--grey3);
+}
+
+td.match-numero {
+	vertical-align: middle;
+	color: var(--grey9);
+	width:1px;
+	background: var(--soft-yellow);
+	font-size:75%;
+	padding:3px;
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+}
+
+td.match-edit {
+	background: var(--soft-yellow);
+	color: var(--soft-yellow);
+	width:10px;
+	min-width: 10px;
+	border-top-right-radius:10px;
+	border-bottom-right-radius:10px;
+}
+
+td.has-a-left, 
+td.has-b-left,
+td.line,
+td.has-match-top-finales,
+td.has-match-bottom-finales {
+	padding:0px;
+}
+
+td.has-a-left {
+	vertical-align: bottom;
+}
+
+td.has-b-left {
+	vertical-align: top;
+}
+
+td.line div {
+	width: 50%;
+	height: 100%;
+	display: inline-block;
+	border-right: 5px solid var(--soft-yellow);
+}
+
+td.has-match-bottom-finales,
+td.has-match-top-finales {
+	text-align: center;
+}
+
+td.has-match-bottom-finales div {
+	width: 50%;
+	height: calc(100% + 5px);
+	display: inline-block;
+	border-right: 5px solid var(--soft-yellow);
+	border-left: 5px solid var(--soft-yellow);
+	border-top: 5px solid var(--soft-yellow);
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	box-sizing: content-box;
+}
+
+td.has-match-top-finales div {
+	width: 50%;
+	height: calc(100% + 5px);
+	display: inline-block;
+	border-right: 5px solid var(--soft-yellow);
+	border-left: 5px solid var(--soft-yellow);
+	border-bottom: 5px solid var(--soft-yellow);
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	box-sizing: content-box;
+}
+
+td.has-a-left div {
+	width: 50%;
+	height: 50%;
+	display: inline-block;
+	border-right:5px solid var(--soft-yellow);
+	border-top: 5px solid var(--soft-yellow);
+	border-top-right-radius: 10px;
+	box-sizing: content-box;
+}
+
+td.has-b-left div {
+	width: 50%;
+	height: 50%;
+	display: inline-block;
+	border-right: 5px solid var(--soft-yellow);
+	border-bottom: 5px solid var(--soft-yellow);
+	border-bottom-right-radius: 10px;
+	box-sizing: content-box;
+}
+
+td.link-highlight div {
+	border-color: var(--light-blue);
+}
+
+td.match-highlight td.match-team,
+td.match-highlight td.match-set,
+td.match-highlight td.match-numero,
+td.match-highlight td.match-infos,
+td.match-highlight td.match-medal,
+td.match-highlight td.match-edit {
+	background: var(--light-blue);
+}
+
+td.match:hover td.match-team,
+td.match:hover td.match-set,
+td.match:hover td.match-numero,
+td.match:hover td.match-infos,
+td.match:hover td.match-medal,
+td.match:hover td.match-edit {
+	background: var(--soft-yellow) !important;
+	color: var(--foreground) !important;
+	cursor:pointer;
+}
+
+td.match-highlight td.team-highlight.team-win {
+	background:green;
+	color: var(--soft-yellow);
+}
+
+td.match-highlight td.team-highlight.team-lose {
+	background:red;
+	color: var(--soft-yellow);
+}
+
+td.match-highlight td.set-highlight,
+td.match-highlight td.medal-highlight {
+	background: var(--blue-win);
+}
+
+td.match td.match-edit div {
+	display:none;
+}
+
+td.match.petite-finale {
+	border-right:10px solid var(--grey2);
+}
+
+td.etape {
+	text-align: center;
+	font-variant: small-caps;
+	font-weight: bold;
+	font-size:125%;
+	background: var(--grey9);
+	border-bottom:20px solid var(--grey2);
+	padding:5px 0px;
+	color: var(--soft-yellow);
+}

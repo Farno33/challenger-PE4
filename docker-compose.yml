@@ -1,0 +1,35 @@
+version: '3.3'
+
+services:
+  site:
+    build: .
+    restart: always
+    volumes:
+      - ./:/var/www/html
+      - ./challenger.conf:/etc/apache2/sites-enabled/000-default.conf
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - db
+    environment:
+      - BRANCH=dev
+    ports:
+      - "8080:80"
+    
+  db:     
+    container_name: challenger_bdd
+    image: mariadb:latest
+    restart: always
+    volumes:
+      - challenger-database:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/my.cnf:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    #ports:
+      #- "172.17.0.1:3306:3306"
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true  # Sera changé par le challenger à la premiere execution (création au passage de users local et admin)
+      - MYSQL_DATABASE=challenger
+
+volumes:
+  challenger-database:

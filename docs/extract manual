@@ -1,0 +1,65 @@
+//Ajout d'une table
+T:table
+T:table:with
+T:alias:table:with
+T_ = TL = LEFT JOIN
+(Si sur la table principale alors pour tout le monde)
+
+//Groupement des données (un seul)
+G:alias (lien faible)
+G:table (lien fort)
+G:alias:table:with (lien fort)
+G2 = GN (Plus de 1 éléments)
+G1 (Au moins 1 éléménts)
+G = G0 (Toutes les cardinalités)
+
+//Subgroup (un seul)
+S:alias
+
+//Filtrage des données affichées
+F:.casefield
+F:alias.field
+F:alias (données par défaut)
+F:alias.* (toutes les données sauf champs de lien id, id_) et les valeurs d'historiques _ref, _...)
+F:alias.field:alias.field:alias.field....
+F:alias.field1.field2.field3....
+(Définit l'ordre d'apparition)
+
+
+//Omission de champs
+O:.casefield
+O:alias.field
+O:alias
+O:alias.*
+O:alias.field:alias.field:alias.field....
+
+
+//Cases (when)
+W:name:alias.field:null (notnull, true, false, numeric)
+W:name:alias.field:OPERATOR:"value"
+W:name:alias.field:OPERATOR:alias.field
+(operator : = <> > < >= <= !=)
+
+
+//Contraintes (and)
+C:alias.field:"value"
+C:alias.field:operator:"value"
+C:alias.field:operator:alias.field
+
+
+//Liste des Sportifs (Par Ecole) groupés par Equipe
+
+T|p:participants|q:sportifs|e:equipes:q|l:ecoles_sports|s:sports|G|ecoles|S|e|W|capitaine:e.id_capitaine=p.id|FP|s.sport.sexe|.capitaine|p.nom.prenom=Prénom.sexe.licence.telephone=Téléphone
+
+T|p:participants:null
+T|q:sportifs:null
+T|e:equipes:qT
+T|l:ecoles_sports:null
+T|s:sports:null
+G0|ecoles:ecoles:null
+S|e
+W|capitaine:e.id_capitaine:=:p.id
+F|s.sport
+...
+
+
